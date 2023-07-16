@@ -1,24 +1,24 @@
-# my-blog-posts
+### Creator
 
-## Project setup
-```
-npm install
-```
+This project was created by Mohamed Khalifa (mtk65@cornell.edu).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### My Blog Posts
 
-### Compiles and minifies for production
-```
-npm run build
-```
+This project is a blog post viewer developed using Vue.js. The application fetches blog post data from the WordPress API (people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json) and presents it to the user using components styled with the Vanilla Framework (vanillaframework.io/docs).
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Project Dependencies
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Ensure you have Node.js and npm installed in your development environment.
+
+### Setting Up and Running the Project
+
+1. Navigate to the project directory in the terminal.
+2. Run `npm install` to install the project dependencies.
+3. To compile and hot-reload for development, use the command: `npm run serve`.
+4. To compile and minify for production, use the command: `npm run build`.
+
+### Libraries and Frameworks Used
+
+1. Vue.js: A progressive JavaScript framework for building user interfaces. (vuejs.org)
+2. Vanilla Framework: A simple, extensible CSS framework written in SCSS. (vanillaframework.io/docs)
+3. WordPress API: The source of the blog post data. (people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json)

@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="row u-equal-height">
+    <BlogPost v-for="(item, index) in data" :key="index" :item="item" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { onMounted, ref } from "vue";
+import BlogPost from "./components/BlogPost.vue";
+import { getBlogPostsData } from "./utils/getBlogPostsData";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
-</script>
+    BlogPost,
+  },
+  setup() {
+    const data = ref(null);
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    onMounted(async () => {
+      try {
+        data.value = await getBlogPostsData();
+      } catch (error) {
+        console.error("Error while fetching data: ", error);
+      }
+    });
+
+    return {
+      data,
+    };
+  },
+};
+</script>
